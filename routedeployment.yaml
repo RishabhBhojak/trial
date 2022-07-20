@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: example
+  namespace: nodeapplication
+spec:
+  path: /
+  to:
+    kind: Service
+    name: loadapp-service
+  port:
+    targetPort: 3000
