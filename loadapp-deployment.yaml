@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: loadapp-deployment
+  namespace: nodeapplication
   labels:
     app: load-app
 spec:
@@ -43,10 +44,9 @@ metadata:
 spec:
   selector:
     app: load-app
-  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 3000
       targetPort: 3000
-      nodePort: 30000
+      
           
